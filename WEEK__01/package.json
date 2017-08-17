@@ -1,0 +1,16 @@
+{
+  "name": "modern_javascript",
+  "version": "1.0.0",
+  "description": "Study Modern JavaScript Env.",
+  "private": true,
+  "scripts": {
+    "babel": "node_modules/.bin/babel src/main.js -o dist/main.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0"
+  },
+  "babel": {
+    "presets": ["env"]
+  }
+}
