@@ -63,3 +63,20 @@ if ( y9.type(data) === 'array' ) {
 let root = window.document.querySelector('html');
 
 root.classList.add('root-element');
+
+
+////////////////
+// let, const //
+////////////////
+
+{
+    // 전역 변수
+    // 블록 내부에 공간(scope)을 형성 하지 않아서
+    var test = '테스트';
+}
+
+{
+    // 지역 변수
+    // 블록 공간을 형성
+    let test = '테스트 ES6';
+}
