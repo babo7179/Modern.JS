@@ -59,3 +59,11 @@ if (y9.type(data) === 'array') {
 } else {
     console.log('data is not array.');
 }
+
+// ——————————————————————————————————————
+// DOM 형성 과정
+// ——————————————————————————————————————
+
+var root = window.document.querySelector('html');
+
+root.classList.add('root-element');
