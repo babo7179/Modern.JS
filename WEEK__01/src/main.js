@@ -1,12 +1,11 @@
 /*! main.js @ 2017, yamoo9.net */
 
-// ES6 Code
-// Fat Arrow Function
-(global => {
+// ——————————————————————————————————————
+// JavaScript 약점
+// 동적 형 지정 언어
+// 정정 형 지정 언어
+// ——————————————————————————————————————
 
-    // `let` variable keyword
-    let document    = global.document;
-    let brand       = document.querySelector('.brand');
-    brand.innerHTML = 'Hi, ES6 :-)';
+var store = null;
 
-  })(window);
+console.log('store:', store);
