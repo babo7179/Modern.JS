@@ -10,33 +10,64 @@
 
   <ul class="target">
     <li><a href>content 01</a></li>
-    <li><a href>content 02</a></li>
+    <li class="active"><a href>content 02</a></li>
     <li><a href>content 03</a></li>
     <li><a href>content 04</a></li>
   </ul>
 
+  <!-- jQuery 코어 -->
   <script src="https://unpkg.com/jquery"></script>
+  <!-- 플러그인 jQuery.radioClass -->
   <script>
     (function(global, $){
       'use strict';
 
       if ( $.type($.fn.radioClass) !== 'function' ) {
-        $.fn.radioClass = function(){
-          console.log(this); // jQuery Object
+        $.fn.radioClass = function(name){
+          // 데이터 검증
+          if ( $.type(name) !== 'string' ) {
+            throw new Error('전달인자는 문자열을 전달해야 합니다.');
+          }
+          // 로직 구성
+          // this === jQuery Object
+          // this(나)에게는 siblings(형제)가 존재
+          // this를 제외한 siblings 중 전달된 활성화 클래스 속성 값을 가진
+          // sibing에서 해당 클래스 값을 제거
+          var activated_sibling = this.siblings('.'+name);
+          activated_sibling.removeClass(name);
+          // this에게는 활성화 클래스 속성을 부여한다.
+          this.addClass(name);
+          // 메서드 체이닝
+          return this;
+
+          // VS
+
+          return this.addClass(name).siblings('.'+name).removeClass(name).addBack();
         };
       }
 
     })(window, window.jQuery);
   </script>
+  <!-- 플러그인 사용 코드 -->
   <script>
   (function(global, $){
     'use strict';
 
-    $('ul.target').on('click', function(e){
-      console.log(this);
-      console.log(e.target);
-      console.log(e.currentTarget);
+    // <ul> 요소에 이벤트 바인딩
+    // 이벤트 위임(전파)
+
+    // BAD CASE
+    // 많이 사용되지만, 문제를 수반하는 코드
+    $('ul.target').on('click', 'a', function(e){
+      // 브라우저 기본 동작 차단
+      e.preventDefault();
+      // 콘솔 로그 확인
+      $(this).parent().radioClass('active').addClass('paradiam');
     });
+
+    // GOOD CASE
+
+
 
   })(window, window.jQuery);
   </script>

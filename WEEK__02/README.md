@@ -55,3 +55,4 @@ GreenSock 애니메이션 플랫폼(GSAP) 라이브러리.
 - [stateofjs](http://stateofjs.com/)
 - [frontend tooling survey 2016 results](https://ashleynolan.co.uk/blog/frontend-tooling-survey-2016-results)
 - [getting started with webpack 2](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783)
+- [이제와서 jQuery를 쓰면 안되는 이유](https://www.tokyobranch.net/archives/6598)
