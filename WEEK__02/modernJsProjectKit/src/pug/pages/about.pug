@@ -1,14 +1,24 @@
+//- 페이지 레이아웃 템플릿 확장
 extends ../partials/layout
 
+//- 페이지 설정
 append config
+  //- 현재 페이지 식별자(파일명)
   - var current = 'about'
+  //- 페이지 타이틀 <title> 값
   - var pageTitle = 'About page'
 
+//- 스타일시트
 block stylesheets
   //- link(rel="stylesheet", href=`/css/${current}.css`)
 
+//- 메인 영역
 block main
-  h1 About
+  .container
+    .row
+      .col-6.col-offset-3
+        h1 About
 
+//- 스크립트
 block scripts
   //- script(src=`/js/${current}.js`)

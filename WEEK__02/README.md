@@ -52,3 +52,6 @@ GreenSock 애니메이션 플랫폼(GSAP) 라이브러리.
 
 - [Front-End Roadmap](https://github.com/kamranahmedse/developer-roadmap#-front-end-roadmap)
 - [Front-End HandBook 2017](https://frontendmasters.com/books/front-end-handbook/2017/)
+- [stateofjs](http://stateofjs.com/)
+- [frontend tooling survey 2016 results](https://ashleynolan.co.uk/blog/frontend-tooling-survey-2016-results)
+- [getting started with webpack 2](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783)

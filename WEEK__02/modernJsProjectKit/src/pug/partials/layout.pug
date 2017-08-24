@@ -1,8 +1,13 @@
+//- 설정
 block config
+  //- 현재 페이지 식별자(파일명)
   - var current   = ''
-  //- - var language  = 'ko-KR'
+  //- 주언어
+  - var language  = 'ko-KR'
+  //- 페이지 타이틀 <title> 값
   - var pageTitle = 'Pug, Sass, ES6 & Webpack ProjectKit.'
 
+//- 페이지 템플릿
 doctype html
 html(lang=language)
 
@@ -11,15 +16,21 @@ html(lang=language)
     meta(name="viewport", content="width=device-width, initial-scale=1")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title= pageTitle
+    //- 공통 스타일
     link(rel="stylesheet", href=`/css/app.css`)
+    //- 사용자 정의 스타일 영역
     block stylesheets
 
   body
 
+    //- 내비게이션 포함
     include nav
 
+    //- 메인 영역
     block main
 
+    //- 공통 스크립트
     script(src="/js/vendor.js")
     script(src="/js/app.js")
+    //- 사용자 정의 스크립트 영역
     block scripts

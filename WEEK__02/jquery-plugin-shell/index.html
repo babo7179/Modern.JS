@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery 플러그인 개발 방법</title>
+</head>
+<body>
+
+  <ul class="target">
+    <li><a href>content 01</a></li>
+    <li><a href>content 02</a></li>
+    <li><a href>content 03</a></li>
+    <li><a href>content 04</a></li>
+  </ul>
+
+  <script src="https://unpkg.com/jquery"></script>
+  <script>
+    (function(global, $){
+      'use strict';
+
+      if ( $.type($.fn.radioClass) !== 'function' ) {
+        $.fn.radioClass = function(){
+          console.log(this); // jQuery Object
+        };
+      }
+
+    })(window, window.jQuery);
+  </script>
+  <script>
+  (function(global, $){
+    'use strict';
+
+    $('ul.target').on('click', function(e){
+      console.log(this);
+      console.log(e.target);
+      console.log(e.currentTarget);
+    });
+
+  })(window, window.jQuery);
+  </script>
+</body>
+</html>

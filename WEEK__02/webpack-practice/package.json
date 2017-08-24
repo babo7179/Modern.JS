@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "node_modules/.bin/webpack --module-bind \"js=babel-loader\" --output-filename bundle.js src/index.js src/Carousel.js",
+    "build": "yarn dev -- -p"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.5.5"
+  }
+}

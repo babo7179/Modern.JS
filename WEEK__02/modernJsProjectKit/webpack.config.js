@@ -176,7 +176,7 @@ module.exports = {
   externals: {
     // 특정 import 패키지의 번들링을 방지, 런타임에 이러한 외부 종속성을 검색
     // 예를 들어 CDN에서 번들로 묶는 대신 jQuery를 포함할 경우, 아래 코드 추가
-    jquery: 'jQuery'
+    // jquery: 'jQuery'
   },
 
   // 소스맵 설정
