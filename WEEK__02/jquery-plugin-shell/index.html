@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>jQuery 플러그인 개발 방법</title>
+  <link rel="stylesheet" href="./css/jquery.carousel.css">
 </head>
 <body>
 
@@ -15,6 +16,7 @@
     <li><a href>content 04</a></li>
   </ul>
 
+  <!-- WAI-ARIA - Ajax, JavaScript App -->
   <section class="main-carousel-slider" data-label="남북이 하나되기 위한 대북지원">
     <article data-label="이미지 제목 1">
         <a href="">
@@ -36,7 +38,10 @@
             <img src="http://eskipaper.com/images/robin-bird-1.jpg" alt>
         </a>
     </article>
-</section>
+  </section>
+
+
+
 
   <!-- jQuery 코어 -->
   <script src="https://unpkg.com/jquery"></script>
@@ -70,14 +75,17 @@
     // GOOD CASE
     //
     // ——————————————————————————————————————
-    // $('ul.target').on('click', 'a', function(e){
-    //   e.preventDefault();
-    //   // $.cache(this).parent().radioClass('active').addClass('paradiam');
-    //   $.$(this).parent().radioClass('active').addClass('paradiam');
-    // });
+    $('ul.target').on('click', 'a', function(e){
+      e.preventDefault();
+      // $.cache(this).parent().radioClass('active').addClass('paradiam');
+      $.$(this).parent().radioClass('active').addClass('paradiam');
+    });
 
-    $('.main-carousel-slider').carousel();
-
+    $('.main-carousel-slider').carousel({
+      indicator: true,
+      animate: true,
+      nav_btn: true
+    });
 
   })(window, window.jQuery);
   </script>
