@@ -40,8 +40,6 @@
     // 문서 객체 수집(탐색)
     user_input = document.querySelector('.user-input');
     binding = document.querySelector('.data-binding');
-    // console.log(user_input);
-    // console.log(binding);
     // 데이터 바인딩 (user_input, binding)
     user_input.setAttribute('value', msg);
     binding.textContent = msg;
@@ -54,11 +52,9 @@
   // 입력 이벤트를 감지하여 2가지를 업데이트 한다.
   function bind(){
     user_input.addEventListener('keyup', function(e){
-      // console.log(e.type);
       update();
     });
     // user_input.addEventListener('change', function(e){
-    //   console.log(e.type);
     // });
   }
 

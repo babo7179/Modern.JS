@@ -5,20 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>VanillaJS VS jQuery VS VueJS</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./lib/bulma.css">
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
 
-  <div class="app">
+  <div class="app container">
 
     <!-- 사용자 입력에 따른 뷰(View) 업데이트 예시 + 데이터(store) 업데이트 -->
     <input
       aria-label="메시지"
       type="text"
-      class="user-input"
+      class="user-input input"
       placeholder="메시지를 입력해주세요.">
 
-    <p class="user-input-print-area">
+    <p class="user-input-print-area box">
       사용자가 입력한 내용은 <span class="data-binding">[ 데이터 바인딩 ]</span> 입니다.
     </p>
 
