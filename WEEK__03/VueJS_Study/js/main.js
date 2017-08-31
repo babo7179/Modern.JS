@@ -1,6 +1,8 @@
 (function(global, store, Vue){
   'use strict';
 
+  Vue.config.devtools = false;
+
   return;
 
   // ——————————————————————————————————————
@@ -51,18 +53,31 @@
   // 사용자가 인풋 컴포넌트에 메시지를 입력한다.
   // 입력 이벤트를 감지하여 2가지를 업데이트 한다.
   function bind(){
-    user_input.addEventListener('keyup', function(e){
-      update();
-    });
-    // user_input.addEventListener('change', function(e){
-    // });
+    user_input.addEventListener('keyup', update);
+    user_input.addEventListener('change', update);
   }
 
   // 업데이트 항목 ---------------------------------------------
   // 1. 사용자가 보는 화면을 업데이트
   // 2. 스토어 데이터를 업데이트
-  function update(){
-    console.log('Update Content');
+  function update(e){
+    switch ( e.type ) {
+      case 'keyup':
+      case 'change':
+        // 업데이트 콘텐츠
+        var content = e.target.value;
+        // store, View 업데이트
+        updateStoreData('message', content);
+        updateView(binding, content);
+    }
+  }
+  function updateStoreData(category, data){
+    if (!store) { throw new Error('store 데이터가 존재하지 않습니다.') }
+    store[category] = data;
+  }
+  function updateView(el, data){
+    if ( el.nodeType !== 1 ) { throw new Error('화면 뷰를 업데이트 할 요소 노드가 존재하지 않습니다.') }
+    el.textContent = data;
   }
 
   // 애플리케이션 실행 ------------------------------------------
