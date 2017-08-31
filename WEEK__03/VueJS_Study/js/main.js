@@ -1,7 +1,7 @@
 (function(global, store, Vue){
   'use strict';
 
-  Vue.config.devtools = false;
+  // Vue.config.devtools = false;
 
   return;
 
@@ -29,6 +29,8 @@
 // 바닐라 스크립트 예시
 (function(global, store){
   'use strict';
+
+  return;
 
   // 지역 변수
   var document = global.document;
@@ -74,6 +76,7 @@
   function updateStoreData(category, data){
     if (!store) { throw new Error('store 데이터가 존재하지 않습니다.') }
     store[category] = data;
+    console.log('store.' + category, store[category]);
   }
   function updateView(el, data){
     if ( el.nodeType !== 1 ) { throw new Error('화면 뷰를 업데이트 할 요소 노드가 존재하지 않습니다.') }
@@ -84,3 +87,43 @@
   init();
 
 })(window, window.store);
+
+// jQuery 스크립트 예시
+// DOM Script 원할하게 작성 도와주는 라이브러리 일 뿐.
+(function(global, $, store){
+  'use strict';
+
+  var $app, $user_input, $binding;
+
+  function init(){
+    // 요소 수집 후, jQuery 인스턴스 화.
+    $app = $('.app');
+    $user_input = $app.find('.user-input');
+    $binding = $app.find('.data-binding');
+    // 데이터 바인딩
+    var data = store.message;
+    $user_input.val(data);
+    $binding.text(data);
+    // 이벤트 바인딩
+    bind();
+  }
+  function bind(){
+    $user_input.on('keyup', update);
+  }
+  function update(e){
+    var input = e.target;
+    var value = input.value;
+    updateStoreData('message', value);
+    updateView($binding, value);
+  }
+  function updateStoreData(type, data){
+    store[type] = data;
+    console.log('store.' + type, store[type]);
+  }
+  function updateView($el, data){
+    $el.text(data);
+  }
+
+  init();
+
+})(window, window.jQuery, window.store);
