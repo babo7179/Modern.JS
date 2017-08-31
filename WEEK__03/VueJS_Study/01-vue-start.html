@@ -15,48 +15,64 @@
 
     <!-- 사용자 입력에 따른 뷰(View) 업데이트 예시 + 데이터(store) 업데이트 -->
 
-    <!-- HTML Code -->
-    <!-- <input
-      aria-label="메시지"
-      type="text"
-      class="user-input input"
-      placeholder="메시지를 입력해주세요.">
+      <!-- HTML Code -->
+      <!-- <input
+        aria-label="메시지"
+        type="text"
+        class="user-input input"
+        placeholder="메시지를 입력해주세요.">
 
-    <p class="user-input-print-area box">
-      사용자가 입력한 내용은 <span class="data-binding">[ 데이터 바인딩 ]</span> 입니다.
-    </p> -->
+      <p class="user-input-print-area box">
+        사용자가 입력한 내용은 <span class="data-binding">[ 데이터 바인딩 ]</span> 입니다.
+      </p> -->
 
     <!-- VueJS Template Code -->
     <input
-      aria-label="메시지"
       type="text"
       class="user-input input"
+      aria-label="메시지"
       placeholder="메시지를 입력해주세요."
       v-model="message">
 
-    <p class="user-input-print-area box">
-      사용자가 입력한 내용은 <span class="data-binding">{{ message }}</span> 입니다.
+    <p v-hilight class="user-input-print-area box">
+      사용자가 입력한 내용은 <span class="data-binding">{{ message | uppercase }}</span> 입니다.
     </p>
+
+    <hr>
+
+    <button v-on:click="updateCount(1)" class="button" type="button">Increase Count</button>
+    <button v-on:click="updateCount(-1)" class="button" type="button">Decrease Count</button>
+    <span class="count box">{{count}}</span>
+
+    <hr>
+
+    <h3 class="title is-3">Memo List</h3>
+
+    <input v-on:change="addMemo" type="text" class="input add-memo">
+
+    <ul>
+      <li class="box" v-for="memo in memoList">{{ memo }}</li>
+    </ul>
 
   </div>
 
 
   <!-- 스토어(저장소) 데이터 로드 -->
-  <script src="./data/store.js"></script>
+    <script src="./data/store.js"></script>
 
-  <!-- jQuery CDN 데이터 로드 -->
-  <!-- <script src="https://unpkg.com/jquery"></script> -->
-  <!-- jQuery 로컬 데이터 로드 -->
-  <script src="./lib/jquery.min.js"></script>
+    <!-- jQuery CDN 데이터 로드 -->
+    <!-- <script src="https://unpkg.com/jquery"></script> -->
+    <!-- jQuery 로컬 데이터 로드 -->
+    <!-- <script src="./lib/jquery.min.js"></script> -->
 
-  <!-- VueJS CDN 데이터 로드 -->
-  <!-- <script src="https://unpkg.com/vue"></script> -->
+    <!-- VueJS CDN 데이터 로드 -->
+    <!-- <script src="https://unpkg.com/vue"></script> -->
 
-  <!-- VueJS 로컬 데이터 로드 -->
-  <script src="./lib/vue.js"></script>
+    <!-- VueJS 로컬 데이터 로드 -->
+    <script src="./lib/vue.js"></script>
 
-  <!-- 메일 파일 로드 -->
-  <script src="./js/main.js"></script>
+    <!-- 메일 파일 로드 -->
+    <script src="./js/main.js"></script>
 
 </body>
 </html>

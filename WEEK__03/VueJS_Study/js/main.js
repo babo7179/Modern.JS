@@ -127,13 +127,45 @@
 (function(global, Vue, store){
   'use strict';
 
+  // 사용자 정의 디렉티브
+  Vue.directive('hilight', {
+    bind: function(el, binding){
+      console.log(el);
+      console.log(binding);
+    }
+  });
+
+  // 사용자 정의 필터
+  Vue.filter('uppercase', function(data){
+    return data.toUpperCase();
+  });
+
   // Vue 객체(인스턴스) 생성
   new Vue({
     // 마운트 할 요소의 선택자를 설정
     el: '.app',
     // 관리할 데이터 연결(binding)
     // 값 참조(reference): 참조형 데이터 | [], {}, function(){}
-    data: store
+    data: {
+      message: 'Today is Complex.',
+      count: 0,
+      memoList: [
+        '기상',
+        '오전 운동',
+        '출근',
+        '퇴근'
+      ]
+    },
+    // 컴포넌트가 사용할 메서드 등록
+    methods: {
+      updateCount: function(value){
+        this.count += value;
+      },
+      addMemo: function(e){
+        this.memoList.unshift(e.target.value);
+        e.target.value = '';
+      }
+    }
   });
 
 })(window, window.Vue, window.store);

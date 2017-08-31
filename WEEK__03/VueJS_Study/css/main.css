@@ -1,3 +1,6 @@
+:root {
+  --font-color: #20C6BB;
+}
 body {
   margin: 4rem;
 }
@@ -6,9 +9,17 @@ body {
   margin-bottom: 1rem;
 }
 .user-input:focus {
-  color: #20C6BB;
+  /* color: #20C6BB; */
+  color: var(--font-color);
+}
+.data-binding {
+  /* color: #20C6BB; */
+  color: var(--font-color);
+}
+.count {
+  margin-top: 20px;
 }
 
-.data-binding {
-  color: #20C6BB;
+.add-memo {
+  margin-bottom: 20px;
 }
