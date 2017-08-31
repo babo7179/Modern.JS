@@ -14,7 +14,9 @@
   <div class="app container">
 
     <!-- 사용자 입력에 따른 뷰(View) 업데이트 예시 + 데이터(store) 업데이트 -->
-    <input
+
+    <!-- HTML Code -->
+    <!-- <input
       aria-label="메시지"
       type="text"
       class="user-input input"
@@ -22,6 +24,18 @@
 
     <p class="user-input-print-area box">
       사용자가 입력한 내용은 <span class="data-binding">[ 데이터 바인딩 ]</span> 입니다.
+    </p> -->
+
+    <!-- VueJS Template Code -->
+    <input
+      aria-label="메시지"
+      type="text"
+      class="user-input input"
+      placeholder="메시지를 입력해주세요."
+      v-model="message">
+
+    <p class="user-input-print-area box">
+      사용자가 입력한 내용은 <span class="data-binding">{{ message }}</span> 입니다.
     </p>
 
   </div>
@@ -39,7 +53,7 @@
   <!-- <script src="https://unpkg.com/vue"></script> -->
 
   <!-- VueJS 로컬 데이터 로드 -->
-  <!-- <script src="./lib/vue.js"></script> -->
+  <script src="./lib/vue.js"></script>
 
   <!-- 메일 파일 로드 -->
   <script src="./js/main.js"></script>

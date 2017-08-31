@@ -1,10 +1,6 @@
 (function(global, store, Vue){
   'use strict';
 
-  // Vue.config.devtools = false;
-
-  return;
-
   // ——————————————————————————————————————
   // Bootstrap(준비) 과정 검수
   // ——————————————————————————————————————
@@ -29,8 +25,6 @@
 // 바닐라 스크립트 예시
 (function(global, store){
   'use strict';
-
-  return;
 
   // 지역 변수
   var document = global.document;
@@ -84,7 +78,7 @@
   }
 
   // 애플리케이션 실행 ------------------------------------------
-  init();
+  // init();
 
 })(window, window.store);
 
@@ -124,6 +118,22 @@
     $el.text(data);
   }
 
-  init();
+  // init();
 
 })(window, window.jQuery, window.store);
+
+
+// VueJS 스크립트 예시
+(function(global, Vue, store){
+  'use strict';
+
+  // Vue 객체(인스턴스) 생성
+  new Vue({
+    // 마운트 할 요소의 선택자를 설정
+    el: '.app',
+    // 관리할 데이터 연결(binding)
+    // 값 참조(reference): 참조형 데이터 | [], {}, function(){}
+    data: store
+  });
+
+})(window, window.Vue, window.store);
