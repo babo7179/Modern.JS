@@ -20,6 +20,6 @@ body {
   margin-top: 20px;
 }
 
-.add-memo {
+.add-memo, .show-add-memo-input {
   margin-bottom: 20px;
 }

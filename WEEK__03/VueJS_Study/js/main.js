@@ -130,8 +130,8 @@
   // 사용자 정의 디렉티브
   Vue.directive('hilight', {
     bind: function(el, binding){
-      console.log(el);
-      console.log(binding);
+      // console.log(el);
+      // console.log(binding);
     }
   });
 
@@ -149,6 +149,7 @@
     data: {
       message: 'Today is Complex.',
       count: 0,
+      is_visible: false,
       memoList: [
         '기상',
         '오전 운동',
@@ -164,6 +165,12 @@
       addMemo: function(e){
         this.memoList.unshift(e.target.value);
         e.target.value = '';
+      },
+      showAddMemo: function(){
+        this.is_visible = true;
+      },
+      toggleMemoInput: function(){
+        this.is_visible = !this.is_visible;
       }
     }
   });

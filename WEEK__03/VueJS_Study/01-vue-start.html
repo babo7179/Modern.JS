@@ -48,11 +48,23 @@
 
     <h3 class="title is-3">Memo List</h3>
 
-    <input v-on:change="addMemo" type="text" class="input add-memo">
+    <button v-on:click="toggleMemoInput" type="button" class="button is-primary show-add-memo-input">toggle add memo input</button>
+
+    <input v-if="is_visible" v-on:change="addMemo" type="text" class="input add-memo">
 
     <ul>
       <li class="box" v-for="memo in memoList">{{ memo }}</li>
     </ul>
+
+    <!-- <div v-bind:class="{'active': isActive}"></div>
+
+    <div v-for="image of imageList">
+      <img v-bind:src="image.source" v-bind:alt="image.alternate_text">
+    </div> -->
+
+    <!-- <div id="greeting">
+      <p>Hello from React</p>
+    </div> -->
 
   </div>
 
